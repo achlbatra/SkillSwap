@@ -1,0 +1,229 @@
+.navbar{
+  position: relative;
+  /* top: -300px; */
+  height: 80px;
+  width: 98vw;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar ul{
+  width: 30%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar ul li{
+  cursor: pointer;
+}
+
+.navbar ul li button{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  height: 50px;
+  width: 100px;
+  background-color: #00AFFF;
+  border: 0px;
+}
+
+.navbar ul li button:hover{
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.navbar img{
+  height: 90px;
+  width: 120px;
+}
+.herosection {
+  position: relative;
+  width: 100vw;
+  height: 600px;
+  background-image: url('../assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.ctabutton {
+  padding: 12px 24px;
+  background-color: #ff4081;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.ctabutton:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.featuresSection {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.cardText {
+  font-size: 1rem;
+  color: #555;
+}
+
+.ctaSection {
+  background-color: #e0dada;
+  padding: 60px 20px;
+  text-align: center;
+  /* border-radius: 20px; */
+  height: 250px;
+  margin: 0px auto;
+  max-width: 100vw;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.ctaHeading {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.ctaText {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ctaBtn {
+  background-color: #ff3e6c;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.ctaBtn:hover {
+  background-color: transparent;
+  border: solid 2px #ff3e6c;
+  color: #ff3e6c;
+  transform: scale(1.1);
+}
+
+.ctaBtnSecondary {
+  background-color: transparent;
+  color: #ff3e6c;
+  border: 2px solid #ff3e6c;
+  padding: 12px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.ctaBtnSecondary:hover {
+  background-color: #ff3e6c;
+  color: white;
+  transform: scale(1.1);
+}
+
+
+.footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footerLinks {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footerLinks a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footerLinks a:hover {
+  color: white;
+}
+
