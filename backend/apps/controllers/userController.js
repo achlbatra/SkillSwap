@@ -32,35 +32,47 @@ let registerUser = async (req, res) => {
 }
 
 
-let login = async(req, res) => {
-  const {email, upassword} = req.body
-  try{
-    let existingUser = await model.findOne({email})
-    if (!existingUser)
-    {
-      return res.status(401).json({ message: "User does not exist!" })
+let login = async (req, res) => {
+  const { email, upassword } = req.body;
+  try {
+    let existingUser = await model.findOne({ email });
+
+    if (!existingUser) {
+      return res.status(401).json({ message: "User does not exist!" });
     }
 
-    const ismatch = await bcrypt.compare(upassword, existingUser.password)
-    if(!ismatch){
-      return res.status(401).json({ message: "Invalid credentials!" })
+    const isMatch = await bcrypt.compare(upassword, existingUser.password);
+    if (!isMatch) {
+      return res.status(401).json({ message: "Invalid credentials!" });
     }
 
-    res.send({
-      status:1,
+    // JWT Token generation
+    const jwt = require("jsonwebtoken");
+    const SECRET_KEY = process.env.SECRET_KEY;
+    const token = jwt.sign(
+      { id: existingUser._id, role: existingUser.role },
+      process.env.SECRET_KEY,
+      { expiresIn: "7d" }
+    );
+
+    res.status(200).json({
+      status: 1,
       message: "User logged in successfully",
-      user:{
+      token, // 🔐 Include token here
+      user: {
         id: existingUser._id,
         name: existingUser.name,
         email: existingUser.email,
         role: existingUser.role,
-      }
-    })
+      },
+    });
+
   } catch (error) {
-    console.error("Login error:", error)
-    res.status(500).json({ message: error.message })
+    console.error("Login error:", error);
+    res.status(500).json({ message: error.message });
   }
-}
+};
+
 
 
 let getUserById = async (req, res) => {
